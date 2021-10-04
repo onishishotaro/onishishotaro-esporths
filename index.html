@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>パラパラアニメーション</title>
+    <link rel="stylesheet" href="/css/reset.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <!-- スクロールさせるための高さ -->
+    <section class="section01">
+      <p>下にスクロールしてください</p>
+    </section>
+
+    <section class="section02 js-scroll">
+      <div class="icon rotate-anime"></div>
+      <div class="bk"></div>
+      <ul class="contents">
+        <li class="inner"></li>
+        <li class="inner"></li>
+        <li class="inner"></li>
+        <li class="inner"></li>
+      </ul>
+    </section>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+  </body>
+</html>

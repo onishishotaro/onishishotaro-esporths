@@ -16,7 +16,7 @@
 .section02 {
   position: relative;
   width: 100%;
-  height: 500px;
+  height: 700px;
   // margin-bottom: 900px;
 }
 .bk {
@@ -24,9 +24,10 @@
   z-index: 1;
   width: 100%;
   height: 100%;
-  background: url(../img/dornatu-bg.jpg) no-repeat;
-  background-size: cover;
-  background-position: center;
+  iframe {
+    width: 100%;
+    height: 100%;
+  }
 }
 
 .contents {
@@ -36,7 +37,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 2;
+  z-index: 3;
   width: 100%;
   height: 100%;
   overflow: hidden;
@@ -52,7 +53,7 @@
       left: 0;
       -webkit-transition: height 1s cubic-bezier(0.25, 1, 0.5, 1);
       transition: height 1s cubic-bezier(0.25, 1, 0.5, 1);
-      background: #ffa500;
+      background: #333;
       width: 100%;
       height: 100%;
       content: "";
@@ -60,12 +61,21 @@
 
     &:nth-child(2) {
       width: 50%;
+      &::before {
+        transition-delay: 0.08s;
+      }
     }
     &:nth-child(3) {
       width: 75%;
+      &::before {
+        transition-delay: 0.16s;
+      }
     }
     &:nth-child(4) {
       width: 100%;
+      &::before {
+        transition-delay: 0.24s;
+      }
     }
   }
 }
@@ -100,23 +110,48 @@
     }
   }
 }
+.is-scroll {
+  .rotate-anime {
+    -webkit-transform: translate(0, -50%) scale(1);
+    -ms-transform: translate(0, -50%) scale(1);
+    transform: translate(0, -50%) scale(1);
+    -webkit-transition: -webkit-transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: -webkit-transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1),
+      -webkit-transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+}
 .rotate-anime {
   position: absolute;
-  top: -50px;
-  left: 50px;
-
-  z-index: 100;
-  animation: rotate-anime 3s linear infinite;
-
-  font-weight: bold;
-  width: 17.5%;
-  height: 50%;
-  border-radius: 50%;
-  background: url(../img/character_donut.png) no-repeat;
-  background-size: contain;
+  width: 200px;
+  height: 200px;
+  top: 0;
+  left: 7.5%;
+  z-index: 2;
+  -webkit-transform: translate(0, 150%) scale(1);
+  -ms-transform: translate(0, 150%) scale(1);
+  transform: translate(0, 150%) scale(1);
+  -webkit-transition: -webkit-transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: -webkit-transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1),
+    -webkit-transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+  &::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    -webkit-animation: rotateAnm 3s linear infinite;
+    animation: rotateAnm 3s linear infinite;
+    background: url(../img/chikyuu.png) center center no-repeat;
+    background-size: contain;
+    width: 100%;
+    height: 100%;
+    content: "";
+  }
 }
 
-@keyframes rotate-anime {
+@keyframes rotateAnm {
   0% {
     transform: rotate(0);
   }
